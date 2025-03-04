@@ -84,7 +84,7 @@ public class C02While {
 			}
 			break;
 		}
-		// 붙은마름모
+		// 왼쪽으로붙은 마름모
 		case 4: {
 			int i = 1;
 			while (i <= numOfStar) {
@@ -107,7 +107,7 @@ public class C02While {
 			}
 			break;
 		}
-		// 삼각형
+		// 정삼각형
 		case 5: {
 			int i = 1;
 			// 공백은 하나씩, 별은 두개씩 늘어난다.
@@ -157,6 +157,71 @@ public class C02While {
 						j++;
 					}
 					while (k <= numOfStar * 2 - 2 * i + 1) {
+						System.out.print("*");
+						k++;
+					}
+					System.out.print("\n");
+					i++;
+				}
+			} else {
+				int i = 1;
+				while (i <= numOfStar / 2) {
+					int j = 1;
+					int k = 1;
+					while (j <= numOfStar / 2 - i) {
+						System.out.print(" ");
+						j++;
+					}
+					while (k <= 2 * i - 1) {
+						System.out.print("*");
+						k++;
+					}
+					System.out.print("\n");
+					i++;
+				}
+				while (i > numOfStar / 2 && i <= numOfStar) {
+					int j = 1;
+					int k = 1;
+					while (j <= i - numOfStar / 2 - 1) {
+						System.out.print(" ");
+						j++;
+					}
+					while (k <= numOfStar * 2 - 2 * i + 1) {
+						System.out.print("*");
+						k++;
+					}
+					System.out.print("\n");
+					i++;
+				}
+			}
+
+			break;
+		}
+		case 7: {
+			if (numOfStar % 2 == 1) {
+				int i = 1;
+				while (i <= numOfStar / 2 + 1) {
+					int j = 1;
+					int k = 1;
+					while (j <= i - 1) {
+						System.out.print(" ");
+						j++;
+					}
+					while (k <= numOfStar - 2 * i + 2) {
+						System.out.print("*");
+						k++;
+					}
+					System.out.print("\n");
+					i++;
+				}
+				while (i > numOfStar / 2 + 1 && i <= numOfStar) {
+					int j = 1;
+					int k = 1;
+					while (j <= numOfStar / 2 - i + 1) {
+						System.out.print(" ");
+						j++;
+					}
+					while (k <= 2 * i - 7) {
 						System.out.print("*");
 						k++;
 					}
