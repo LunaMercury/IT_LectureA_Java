@@ -39,17 +39,14 @@ public class C02Ex {
 		// ArrayList에 있는 문자열 중에서 길이가 5보다 큰 문자열만 필터링해서 리턴하는 함수를 만드세요
 
 		// 5보다 작은 숫자 삭제
+		List<String> morethan5 = new ArrayList<String>();
 		for (int i = 0; i < list.size(); i++) {
-			if (Integer.parseInt(list.get(i)) < 5) {
-				list.remove(list.get(i));
-			} //????????? 미해결
-
+			if (Integer.parseInt(list.get(i)) > 5) {
+				morethan5.add(list.get(i));
+			}
 		}
-//		for (String el : list) {
-//			if (Integer.parseInt(el) < 5) {
-//				list.remove(el);
-//			}
-//		}
+		list.clear();
+		list = morethan5;
 		System.out.println("5 이하 삭제 : " + list);
 		return list;
 	}
@@ -69,7 +66,6 @@ public class C02Ex {
 		func1(li);
 		List<String> returndList = func2(li);
 		int sum = func3(returndList);
-		System.out.println(sum);
+		System.out.println(sum);		
 	}
-
 }

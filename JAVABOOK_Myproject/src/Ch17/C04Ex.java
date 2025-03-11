@@ -3,13 +3,20 @@ package Ch17;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class C04Ex {
 	
 	public static void sortNumber(Set<Integer> sets) {
-		List<Integer> sorte = sets.stream().sorted().collect(Collectors.toList());
-		System.out.println(sorte);
+		List<Integer> sort1 = sets.stream().sorted().collect(Collectors.toList());
+		System.out.println(sort1);
+		
+//		Set<Integer> sort2 = new TreeSet<Integer>();
+//		for (Integer el : sets) {
+//			sort2.add(el);
+//		}
+//		System.out.println(sort2);
 	}
 	
 	public static void main(String[] args) {
