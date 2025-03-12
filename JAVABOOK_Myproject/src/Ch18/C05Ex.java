@@ -31,8 +31,8 @@ class GUI extends JFrame {
 		btn3.setBounds(220, 130, 150, 40);
 		JTextField txt1 = new JTextField();
 		txt1.setBounds(10, 300, 200, 40);
-		JButton btn4 = new JButton("입력");
-		btn4.setBounds(220, 300, 150, 40);
+		JButton input = new JButton("입력");
+		input.setBounds(220, 300, 150, 40);
 
 		// Panel(Component)
 		panel.add(scroll1);
@@ -40,9 +40,10 @@ class GUI extends JFrame {
 		panel.add(btn2);
 		panel.add(btn3);
 		panel.add(txt1);
-		panel.add(btn4);	
+		panel.add(input);	
 
 		add(panel);
+		
 		setVisible(true);
 	}
 
