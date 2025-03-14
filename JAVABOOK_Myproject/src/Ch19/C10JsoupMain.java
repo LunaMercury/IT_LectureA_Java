@@ -21,12 +21,13 @@ public class C10JsoupMain {
 		// URL 연결
 		Connection conn = Jsoup.connect("https://www.op.gg/champions"); // 크롤링 함수. conn과 사이트를 연결.
 
-		Document document = conn.get(); // con을 document화
+		Document document = conn.get(); // conn으로 가져온 것을 document화
 //		System.out.println(document);
 
 		Elements elements = document.getElementsByTag("img"); // img파일의 정보만 elements에 저장
 //		System.out.println(elements);
 
+		System.out.println("img crolling start");
 		for (Element el : elements) {
 
 			try {
@@ -65,6 +66,7 @@ public class C10JsoupMain {
 			}
 
 		}
+		System.out.println("finished");
 
 	}
 

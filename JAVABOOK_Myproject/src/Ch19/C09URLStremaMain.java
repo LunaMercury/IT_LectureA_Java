@@ -18,13 +18,13 @@ public class C09URLStremaMain {
 		InputStream in = url.openStream(); //inputstream으로 업스케일링
 
 		// 보조 스트림 추가(Ch20에서 실행)
-		BufferedInputStream bufferIn = new BufferedInputStream(in); // 버퍼공간 추가
+		BufferedInputStream bufferIn = new BufferedInputStream(in); // InputStream에 buffer기능을 추가
 		Reader rin = new InputStreamReader(bufferIn); // byte -> char 변환
 		Writer out = new FileWriter("C:\\IOTEST\\index.html");
 //		OutputStream out = new FileOutputStream("C:\\IOTEST\\index.html");
 
 		while (true) {
-			int data = rin.read();
+			int data = rin.read();//(char)rin을 int형으로 변환
 			if (data == -1) {
 				break;
 			}
@@ -37,5 +37,4 @@ public class C09URLStremaMain {
 		in.close();
 		out.close();		
 	}
-
 }

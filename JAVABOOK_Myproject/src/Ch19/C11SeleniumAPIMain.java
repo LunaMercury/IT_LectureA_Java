@@ -1,4 +1,6 @@
 // 사람행동과 유사한 크롤링 봇
+// Jsoup는 바로 크롤링 하는 느낌이라면 Selenium은 직접 클릭클릭해서 찾는 느낌
+// 행동 순서대로 코드 짜는 것이 특징
 
 package Ch19;
 
@@ -8,7 +10,6 @@ import java.io.Writer;
 import java.util.List;
 import java.util.UUID;
 
-import org.jsoup.select.Evaluator.Id;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
