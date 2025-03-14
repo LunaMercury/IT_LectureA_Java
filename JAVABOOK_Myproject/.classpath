@@ -6,5 +6,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/jsoup-1.19.1.jar"/>
+	<classpathentry kind="lib" path="src/Ch19/selenium-server-4.29.0.jar"/>
+	<classpathentry kind="lib" path="src/Ch19/jackson-annotations-2.18.3.jar"/>
+	<classpathentry kind="lib" path="src/Ch19/jackson-core-2.18.3.jar"/>
+	<classpathentry kind="lib" path="src/Ch19/jackson-databind-2.18.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
