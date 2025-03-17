@@ -11,5 +11,6 @@
 	<classpathentry exported="true" kind="lib" path="src/Ch19/jackson-core-2.18.3.jar"/>
 	<classpathentry exported="true" kind="lib" path="src/Ch19/jackson-databind-2.18.3.jar"/>
 	<classpathentry kind="lib" path="src/Ch19/jsoup-1.19.1.jar"/>
+	<classpathentry kind="lib" path="src/Ch21/mysql-connector-j-9.2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
