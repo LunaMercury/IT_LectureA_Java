@@ -1,3 +1,5 @@
+// 배경색 설정
+
 package Ch18;
 
 import java.awt.Color;
@@ -5,7 +7,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-// 클래스로 만들어서 관리하는 것이 편하다.
+
 class C03GUI extends JFrame {
 
 	public C03GUI(String title) {

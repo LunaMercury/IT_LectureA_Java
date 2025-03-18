@@ -12,7 +12,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-// 클래스로 만들어서 관리하는 것이 편하다.
 class C04GUI extends JFrame {
 
 	public C04GUI(String title) {
@@ -40,7 +39,7 @@ class C04GUI extends JFrame {
 		JTextArea area1 = new JTextArea("여기에 입력 가능");
 //		area1.setBounds(10, 90, 210, 310); //아래 scroll로 인해 필요없다.
 		// 스크롤
-		JScrollPane scroll1 = new JScrollPane(area1);
+		JScrollPane scroll1 = new JScrollPane(area1); // area1에 스크롤 적용.
 		scroll1.setBounds(10, 90, 210, 310);
 
 		// Panel(Component)

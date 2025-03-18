@@ -92,6 +92,7 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		}
 		if (e.getSource() == input) {
 			System.out.println("입력 클릭");
+			setInput();
 		}
 	}
 
@@ -118,10 +119,11 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+		System.out.println("mouse clicked :" + e.getPoint()); // 마우스 클릭한 위치 확인
+		int offset = area1.viewToModel(e.getPoint()); // 상대위치 확인
+		System.out.println("offset :" + offset);
+
 		try {
-			System.out.println("mouse clicked :" + e.getPoint()); // 마우스 클릭한 위치 확인
-			int offset = area1.viewToModel(e.getPoint()); // 상대위치 확인
-			System.out.println("offset :" + offset);
 			// 행의 위치 확인
 			int row = area1.getLineOfOffset(offset);
 			System.out.println("row : " + row);

@@ -1,7 +1,6 @@
 //데이터베이스 불러오기, 수정, 삭제
 // 엑셀(csv 등)으로 되어있는 것을 불러와서 mySQL과 연동해 조작.
 
-
 package Ch21;
 
 import java.sql.Connection;
@@ -86,6 +85,10 @@ class ChargeStation {
 }
 
 public class C06Ex extends ChargeStation {
+	public C06Ex(int no, String section, String station, String name, int zipcode, String address) {
+		super(no, section, station, name, zipcode, address);
+	}
+
 	// DB CONN DATA
 	static String id = "root";
 	static String pw = "1234";
@@ -216,18 +219,19 @@ public class C06Ex extends ChargeStation {
 		rs.close();
 	}
 
-	public static void main(String[] args) throws Exception {		
-		
-		try {			
+	public static void main(String[] args) throws Exception {
+
+		try {
 			connect();
 //			Insert(new ChargeStation(201, "대구광역시", "대구지사", "대구가스", 10101, "대구"));
 //			Delete(201);			
 //			Update(new ChargeStation(201, "대구광역시", "중부지사", "대구중부가스", 12345, "대구"));
 			Select();
-			freeConnection();
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			freeConnection();
 		}
 	}
 }

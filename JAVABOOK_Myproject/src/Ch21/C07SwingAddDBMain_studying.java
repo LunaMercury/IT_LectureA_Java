@@ -1,5 +1,8 @@
+// swing과 데이터베이스 접목
+
 package Ch21;
 
+import java.awt.JobAttributes.DefaultSelectionType;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -28,9 +31,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.text.BadLocationException;
+
+import org.slf4j.jul.JULServiceProvider;
 
 class Memo {
 	private int id;
@@ -81,13 +87,149 @@ class Memo {
 
 }
 
+class SelectFrame extends JFrame implements MouseListener, ActionListener {
+
+	C07GUI mainUI;
+	JTable table;
+	JScrollPane scroll;
+	JPanel panel;
+	JButton selectButton;
+	String selectedText;
+
+	SelectFrame(C07GUI mainUI) {
+		super("SELECT 결과");
+		this.mainUI = mainUI;
+
+		setBounds(100, 100, 500, 500);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);// EXIT_ON_CLOSE 이거 하면 창이 다 닫힌다.
+
+		// panel
+		panel = new JPanel();
+		panel.setLayout(null);
+
+		// 버튼
+		selectButton = new JButton("선택");
+		selectButton.setBounds(410, 10, 70, 30);
+		selectButton.addActionListener(this);
+
+		// frame(panel)
+		add(panel);
+		panel.add(selectButton);
+
+		// event
+		setVisible(false);
+	}
+
+	void select(Connection conn, PreparedStatement pstmt, ResultSet rs) {
+		if (scroll != null) {
+			panel.remove(scroll);
+		}
+
+		try {
+			// SQL 준비
+			pstmt = conn.prepareStatement("select * from tbl_memo");
+
+			// SQL 실행
+			Memo memo;
+			List<Memo> list = new ArrayList();
+			rs = pstmt.executeQuery();
+
+			// component
+			String[] column = { "ID", "TEXT", "CREATED_AT" };
+			List<String[]> data = new ArrayList();
+
+			// memo에 하나씩 넣는 작업
+			if (rs != null) {
+				while (rs.next()) {
+					memo = new Memo();
+					memo.setId(rs.getInt("id"));
+					memo.setText(rs.getString("text"));
+					Timestamp timestamp = rs.getTimestamp("createdAt"); // db에서의 시간포맷과 java의 시간포맷이 다르다
+					System.out.print(timestamp);
+					memo.setCreateAt(timestamp.toLocalDateTime());
+					list.add(memo);
+
+					data.add(new String[] { rs.getString("id"), rs.getString("text"), rs.getString("createdAt") });
+				}
+			}
+
+			list.forEach(System.out::println);
+
+			String[][] arr = new String[data.size()][];
+			// for 값복사
+			for (int i = 0; i < data.size(); i++) {
+				arr[i] = data.get(i);
+			}
+
+			table = new JTable(arr, column);
+			scroll = new JScrollPane(table);
+			scroll.setBounds(10, 10, 400, 400);
+
+			table.addMouseListener(this);
+
+			// panel(component)
+			panel.add(scroll);
+
+		} catch (Exception e2) {
+			e2.getStackTrace();
+		} finally {
+			try {
+				rs.close();
+			} catch (Exception e2) {
+			}
+			try {
+				pstmt.close();
+			} catch (Exception e2) {
+			}
+		}
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("clicked");
+		int selectedRow = table.getSelectedRow();
+		selectedText = table.getValueAt(selectedRow, 1).toString();
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == selectButton) {
+			mainUI.area1.setText(selectedText);
+		}
+	}
+}
+
 class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListener {
 	JButton btn1;
 	JButton btn2;
 	JButton btn3; // INSERT
 	JButton btn4; // UPDATE
-	JButton btn5; // SELECT
-	JButton btn6; // DELETE
+	JButton btn5; // DELETE
+	JButton btn6; // SELECT
 
 	JButton input;
 	JTextField txt1;
@@ -104,6 +246,7 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 	static Connection conn = null;
 	static PreparedStatement pstmt = null;
 	static ResultSet rs = null;
+	SelectFrame selectFrame;
 
 	C07GUI(String title) throws ClassNotFoundException, SQLException {
 		// frame
@@ -158,7 +301,6 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		area1.addMouseListener(this);
 
 		// panel(component)
-//		panel.add(area1);
 		panel.add(scroll1);
 		panel.add(btn1);
 		panel.add(btn2);
@@ -175,10 +317,14 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		// frame
 		setVisible(true);
 
+		// DB 연결코드
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		System.out.println("Driver loading Success");
 		conn = DriverManager.getConnection(url, id, pw);
 		System.out.println("DB CONNECTED");
+
+		// selectframe
+		selectFrame = new SelectFrame(this);
 	}
 
 	@Override
@@ -297,30 +443,9 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 		} else if (e.getSource() == btn5) {
 		} else if (e.getSource() == btn6) {
 			System.out.println("SELECT");
-			try {
-				// SQL 준비
-				pstmt = conn.prepareStatement("select * from tbl_memo");
+			selectFrame.select(conn, pstmt, rs);
+			selectFrame.setVisible(true);
 
-				// SQL 실행
-				List<Memo> list = new ArrayList();
-				Memo memo;
-				rs = pstmt.executeQuery();
-
-				if (rs != null) {
-					while (rs.next()) {
-						memo = new Memo();
-						memo.setId(rs.getInt("id"));
-						memo.setText(rs.getString("text"));
-						Timestamp timestamp = rs.getTimestamp("create"); // db에서의 시간포맷과 java의 시간포맷이 다르다
-						System.out.print(timestamp);
-						memo.setCreateAt(timestamp.toLocalDateTime());
-						list.add(memo);
-					}
-				}
-				list.forEach(System.out::println);
-			} catch (Exception e2) {
-				e2.getStackTrace();
-			}
 		} else if (e.getSource() == input) {
 			System.out.println("입력");
 		}
@@ -402,7 +527,7 @@ class C07GUI extends JFrame implements ActionListener, KeyListener, MouseListene
 
 }
 
-public class C07SwingAddDBMain {
+public class C07SwingAddDBMain_studying {
 
 	public static void main(String[] args) {
 
