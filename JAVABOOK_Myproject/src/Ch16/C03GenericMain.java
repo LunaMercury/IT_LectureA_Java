@@ -61,6 +61,7 @@ public class C03GenericMain {
 		Couple<Man, Woman> couple1 = new Couple(new Man("철수", "20", "대구"), new Woman("영희", "22", "대구"));
 //		Couple<Man, Man> couple2 = new Couple(new Man("홍길동1", "25", "대구"), new Man("홍길동", "24", "대구"));
 //		Couple<Integer, Integer> couple3 = new Couple(100, 200);
+		System.out.println(couple1);
 	}
 
 }
