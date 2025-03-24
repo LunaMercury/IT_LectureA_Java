@@ -18,25 +18,25 @@ public class C02ThreadMain {
 		th2.start();
 
 		// Thread class 스레드 분할
-		new Thread() {
-
-			@Override
-			public void run() {
-				super.run();
-				for (int i = 0; i < 5; i++) {
-					System.out.println("TASK 03..");
-					try {
-						Thread.sleep(500);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-
-		}.start();
-		;
-
+//		new Thread() {
+//
+//			@Override
+//			public void run() {
+//				super.run();
+//				for (int i = 0; i < 5; i++) {
+//					System.out.println("TASK 03..");
+//					try {
+//						Thread.sleep(500);
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//
+//		}.start();
+//		;
+//
 //		for (int i = 0; i < 5; i++) {
 //			System.out.println("TASK 01..");
 //			Thread.sleep(500);
