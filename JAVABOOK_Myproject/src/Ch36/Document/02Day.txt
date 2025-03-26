@@ -1,0 +1,32 @@
+------------------
+로그인 프로세스
+------------------
+1 UserServiceImpl
+	Map<String,Object> login(username,password,sessionId)	
+		1 기존 로그인된 상태인지
+			- SessionidList안의 id값과 전달받은 sessionId값을 비교
+		2 user테이블에 동일한 계정이 존재하는지 - UserDaoImpl's Select(username))
+		3 전달받은 password와 user테이블의계정의 password일치 
+			- bCryptPasswordEncoder.matchs(row,encryptPw)
+		4 로그인 처리
+			session테이블에 계정에 대한 정보 insert 
+				- SessionDaoImpl's Insert(sessionDto)
+				- SessionDaoImpl's Select(username);
+			sessionList에 sessionId added
+				- SessionidList.add(sessionId);
+			
+2 UserDaoImpl
+	UserDto Select(String username)
+
+3 SessionDaoImpl
+	boolean Insert(SessionDto dto);
+	SessionDto Select(String username);
+	
+	
+add Issue
+TX처리 - Connection 단일화 이후 처리
+UserController와 연결진행
+
+
+	
+	

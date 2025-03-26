@@ -1,0 +1,28 @@
+----------------------
+모듈시험제출 자료
+----------------------
+01 MVC 패턴 기반 ClassDiagram
+	- ConnectionPool
+	- CommonDao
+	- Interface 설계
+
+02 Business Layer에서 작업하는 핵심 로직은 Sequence Diagram으로 그려줄 것(ex.로그인..)
+
+03 MVC 패턴 기반 JAVA 코드(View 코드는 생략가능/추가하면 땡큐)
+	- Controller
+	- Domain
+		-Common
+			- Dao		 
+			- Dto		 
+			- Service		 
+		- User	
+			- Dao
+			- Dto
+			- Service
+		- Admin
+			- Dao
+			- Dto
+			- Service
+	- View
+		- 자유롭게~
+

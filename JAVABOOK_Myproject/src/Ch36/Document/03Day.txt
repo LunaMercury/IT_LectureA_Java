@@ -1,0 +1,41 @@
+1	2		3		4		
+View -> FrontController -> UserController 	-> UserDaoImpl		- (table)User
+									    	-> SessionDaoImpl 	- (table)Session
+
+
+1 View
+uri,serviceNo,params(username,password,sessionId)
+	
+													2 FrontController
+														uri
+															   	    	-> 	UserController
+																			serviceNo,params
+																			1 파라미터
+																			  username
+																			  password
+																			  sessionId
+																			2 데이터 유효성
+																			  isvalid(username,password,sessionId)
+																			3 서비스 실행
+																			  username,password,sessionId    	->	  UserServiceImpl
+																							  
+																													  1) 로그인상태여부 확인
+																													  2) 동일username확인
+																														username 		-> UserDaoImpl
+																																						->     user
+																																		<-   UserDto	<-
+																													  3) Password Check
+																													  4) Session정보 생성
+																														SessionDto		-> SessionDaoImpl
+																																					->     session
+																																		<- 	boolean	<-
+																													  5) SessionIdList added
+																								Map<String,Object>	<-
+																	
+																		4 뷰로 전달
+																		<-  Map<String,Object>
+															<-Map<String,Object>
+
+
+		
+ 

@@ -1,0 +1,24 @@
+1 SingleTon Pattern
+	Dao
+		- SessionDaoImpl
+		- UserDaoImpl
+		- BookDaoImpl
+	Service
+		- UserServiceImpl
+		- BookServiceImpl
+	
+2 Connection단일화
+	1 CommonDao
+		- id/pw/url
+		- Connection/PreparedStatement/rs
+		- ConnectionPool
+		
+	2 ConnectionPool
+		- DB연결 / Connection생성 / freeConnection..
+
+	3 etcDaoImpl을 CommonDao와 상속관계
+
+3 Interface Extract..
+	1 ServiceImpl - Dao(Interface) - DaoImpl(!)
+ 	2 Controller - Service(interface) - ServiceImpl		
+

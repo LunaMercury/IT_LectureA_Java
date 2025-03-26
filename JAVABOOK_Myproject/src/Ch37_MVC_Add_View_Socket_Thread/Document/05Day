@@ -1,0 +1,33 @@
+1 트랜잭션처리(Service Layer에서 처리)
+	ServiceLayer 에서 CommonDao의 Connection 에 접근하여 autoCommit(false)처리
+	Dao에서 DB CRUD 작업
+	Dao 작업 끝난이후 ServiceLayer에서 conn.commit() 처리
+	예외상황 발생시 Controller로 던지는 예외를 받아서 conn.rollback() 처리
+
+2 HikariCP 로 변경 / TX(Transaction) 처리
+	- Denpendencies Library List
+		- HikariCP-5.1.0.jar
+		- logback-classic-1.5.3.jar
+		- slf4j-api-2.0.12.jar
+	
+	- Domain>Dao>Common>ConnectionPool_ByHikari 파일 확인
+	- UserServiceImpl 코드 추가 / 변경 Transaction Code
+	- UserController 코드 추가 /변경 Transaction Code
+	
+	- 주석 //05-02 코드 참고
+	
+
+3 application.properties 에서 설정내용 받아서 사용하기
+	- application.properties DB Conn관련 Value값 적기
+	
+	- Properties 패키지 추가
+	- CommonProperties 에서 application.properties 의 파일 값을 가져와 public static 속성으로 저장
+	- CommonProperties 의 public static 속성값들을 DB연결에 사용 
+	
+	- //05-03 참고
+	
+
+
+
+
+ 
