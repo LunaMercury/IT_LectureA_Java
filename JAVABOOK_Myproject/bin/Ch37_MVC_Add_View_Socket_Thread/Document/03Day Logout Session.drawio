@@ -1,0 +1,220 @@
+<mxfile host="app.diagrams.net" modified="2024-04-03T02:01:17.273Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="wN7EX7482LdzrqXuj2IU" version="24.2.1" type="device">
+  <diagram name="페이지-1" id="7hjGcUoKs7n6YTPe30f5">
+    <mxGraphModel dx="989" dy="538" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ocKvPegWWk18ghFob1gB-26" value="" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="50" y="700" width="790" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-24" value="" style="html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="50" y="68" width="790" height="572" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-1" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" parent="1" vertex="1">
+          <mxGeometry x="100" y="130" width="20" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-2" value="회원" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="85" y="88" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-3" value="UserService" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="364" y="110" width="100" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-4" value="4&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Session 테이블에 세션정보를 저장&lt;/span&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="454" y="343" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.542;exitY=0.281;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110.84000000000015" y="199.30000000000007" as="sourcePoint" />
+            <mxPoint x="410" y="199" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-6" value="로그인 요청 시도(username,password,sessionId)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="l1Mu3BqheCmeKRcQ3hQN-5" vertex="1" connectable="0">
+          <mxGeometry x="-0.0859" y="-2" relative="1" as="geometry">
+            <mxPoint x="12" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="190" width="10" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="l1Mu3BqheCmeKRcQ3hQN-9" target="l1Mu3BqheCmeKRcQ3hQN-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="260" />
+              <mxPoint x="446" y="260" />
+              <mxPoint x="446" y="280" />
+              <mxPoint x="426" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="275" width="12" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-14" value="1 현재 로그인 상태인지 여부 확인&lt;div&gt;SessionList에 저장된 id값을 이용해서 Session테이블 조회&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="454" y="210" width="330" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-15" value="&lt;span style=&quot;text-wrap: nowrap;&quot;&gt;sessionId 일치여부&lt;/span&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=180;height=24;" parent="1" vertex="1">
+          <mxGeometry x="120" y="216" width="280" height="324" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-17" value="" style="endArrow=none;startArrow=open;endFill=0;startFill=0;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="109.81034482758605" y="590" as="sourcePoint" />
+            <mxPoint x="410" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-18" value="로그인 실패(response:false,msg : 로그인상태입니다)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="l1Mu3BqheCmeKRcQ3hQN-17" vertex="1" connectable="0">
+          <mxGeometry x="-0.142" y="-3" relative="1" as="geometry">
+            <mxPoint x="22" y="17" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-20" value="2 User테이블에 동일 Id가 있는지 확인" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="444" y="283" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-21" value="getUser(String username)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="444" y="253" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-22" value="3 유저로 부터 전달받은 ID/PW 와 User테이블로부터 받은 ID/PW 비교" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="447" y="313" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-23" value="계정유무확인" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=135;height=30;" parent="1" vertex="1">
+          <mxGeometry x="135" y="260" width="250" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-24" value="" style="endArrow=none;startArrow=open;endFill=0;startFill=0;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="109.66666666666674" y="499.58" as="sourcePoint" />
+            <mxPoint x="410" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-25" value="로그인 실패(msg : 유저계정이 존재하지 않습니다)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="l1Mu3BqheCmeKRcQ3hQN-24" vertex="1" connectable="0">
+          <mxGeometry x="-0.142" y="-3" relative="1" as="geometry">
+            <mxPoint x="21" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-26" value="패스워드 일치여부 확인" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=140;height=30;" parent="1" vertex="1">
+          <mxGeometry x="150" y="300" width="225" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-27" value="" style="endArrow=none;startArrow=open;endFill=0;startFill=0;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="108.99666666666674" y="450" as="sourcePoint" />
+            <mxPoint x="410" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-28" value="로그인 실패(msg : 패스워드가 일치하지 않습니다)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="l1Mu3BqheCmeKRcQ3hQN-27" vertex="1" connectable="0">
+          <mxGeometry x="-0.142" y="-3" relative="1" as="geometry">
+            <mxPoint x="22" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-29" value="login(username,password,sessionId)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="414" y="170" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-30" value="" style="endArrow=none;startArrow=open;endFill=0;startFill=0;html=1;rounded=0;dashed=1;" parent="1" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="108.99666666666674" y="418" as="sourcePoint" />
+            <mxPoint x="410" y="418" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-31" value="로그인성공(msg:로그인성공,sessionId:value)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="l1Mu3BqheCmeKRcQ3hQN-30" vertex="1" connectable="0">
+          <mxGeometry x="-0.142" y="-3" relative="1" as="geometry">
+            <mxPoint x="25" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="l1Mu3BqheCmeKRcQ3hQN-32" target="l1Mu3BqheCmeKRcQ3hQN-32" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="347" />
+              <mxPoint x="446" y="347" />
+              <mxPoint x="446" y="372" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l1Mu3BqheCmeKRcQ3hQN-32" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="414" y="350" width="12" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-1" value="" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};participant=umlActor;" parent="1" vertex="1">
+          <mxGeometry x="100" y="760" width="20" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-2" value="UserService" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="390" y="750" width="100" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-3" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="111" y="820" as="sourcePoint" />
+            <mxPoint x="430" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-4" value="로그아웃 요청(sessionId)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ocKvPegWWk18ghFob1gB-3" vertex="1" connectable="0">
+          <mxGeometry x="-0.0973" y="1" relative="1" as="geometry">
+            <mxPoint x="1" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-5" value="sessionId 발급&lt;div&gt;sessionList넣기&lt;/div&gt;&lt;div&gt;sessionDto 만들어서 넣었다&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="504" y="730" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="433" y="820" width="14" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-7" value="logout(sessionId)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="447" y="800" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-8" value="1 sessionList에 sessionId 있는지 확인&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;2 Session테이블에서 dto 삭제&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;3 List에서 sessionId 제거&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="454" y="840" width="230" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-9" value="SessionList에 id값유뮤" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=145;height=30;" parent="1" vertex="1">
+          <mxGeometry x="115" y="840" width="305" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-10" value="" style="endArrow=open;html=1;rounded=0;exitX=-0.34;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;endFill=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="430.24" y="1081.5" as="sourcePoint" />
+            <mxPoint x="110" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-11" value="로그아웃 실패&lt;div&gt;(response:false,msg:로그인된 상태가 아닙니다)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ocKvPegWWk18ghFob1gB-10" vertex="1" connectable="0">
+          <mxGeometry x="0.2835" y="1" relative="1" as="geometry">
+            <mxPoint x="45" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-14" value="" style="endArrow=open;html=1;rounded=0;exitX=-0.34;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;endFill=0;entryX=0.004;entryY=0.772;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="427.5" y="1010" as="sourcePoint" />
+            <mxPoint x="116.22000000000003" y="1010.1200000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-15" value="로그아웃 성공&lt;div&gt;(response : true, msg : 로그아웃성공!)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ocKvPegWWk18ghFob1gB-14" vertex="1" connectable="0">
+          <mxGeometry x="0.2835" y="1" relative="1" as="geometry">
+            <mxPoint x="45" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-18" value="" style="endArrow=open;html=1;rounded=0;exitX=-0.34;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;endFill=0;entryX=0.004;entryY=0.772;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="428.5" y="907.66" as="sourcePoint" />
+            <mxPoint x="117" y="907.66" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-19" value="로그아웃 실패&lt;div&gt;(response : false, msg : 시스템상의 이유로 삭제불가)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ocKvPegWWk18ghFob1gB-18" vertex="1" connectable="0">
+          <mxGeometry x="0.2835" y="1" relative="1" as="geometry">
+            <mxPoint x="36" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-22" value="" style="endArrow=open;html=1;rounded=0;exitX=-0.34;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;endFill=0;entryX=0.004;entryY=0.772;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="428.5" y="963.66" as="sourcePoint" />
+            <mxPoint x="117" y="963.66" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-23" value="로그아웃 실패&lt;div&gt;(response : false, msg : List에서 삭제불가)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ocKvPegWWk18ghFob1gB-22" vertex="1" connectable="0">
+          <mxGeometry x="0.2835" y="1" relative="1" as="geometry">
+            <mxPoint x="36" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-25" value="LOGIN&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="38" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ocKvPegWWk18ghFob1gB-27" value="LOGOUT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="40" y="670" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="p9wnhvNwv9OFp57l-Rs8-1" value="5&amp;nbsp;&lt;span style=&quot;text-align: left;&quot;&gt;SessionList에 SessionId를 저장&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="447" y="380" width="200" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

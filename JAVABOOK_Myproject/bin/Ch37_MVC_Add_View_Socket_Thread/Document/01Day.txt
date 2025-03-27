@@ -1,0 +1,45 @@
+1 FrontController
+	Map<String,SubController> map;
+
+	init(){}	- SubController를 uri:SubController객체
+
+	Map<String,Object> execute(uri,serviceNo,params)
+
+2 SubController(inteterface)
+ - 1 파라미터 
+ - 2 Data Validation 
+ - 3 Service 실행
+ - 4 View
+
+ - Map<String,Object> execute (serviceNo,params)
+	
+	-BookController
+	-LendController
+	-UserController
+
+3 ServiceImpl
+	- BookServiceImpl
+		- Business Validation Check
+	- LendServiceImpl
+	- UserServiceImpl
+
+
+4 DaoImpl
+	- BookDaoImpl
+		- C R U D
+	- LendDaoImpl
+	- UserDaoImpl
+
+5 Dto
+	- BookDto
+	- LendDto
+	- UserDto
+--------------------
+View(uri,no,params)
+	-> FrontController
+		uri	-> BookController
+				no,dto 	-> BookServiceImpl
+						dto ->		BookDaoImpl
+									->  	bookTbl
+				
+
