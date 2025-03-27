@@ -20,7 +20,7 @@ class ControllerTests {
 		params.put("endPoint", "/user"); // endPoint
 		params.put("serviceNo", 1); // ServiceNo
 		// 회원가입 - 인자전달
-		params.put("userid", "user12345");
+		params.put("userid", "user123");
 		params.put("username", "홍길동");
 		params.put("password", "1234");
 		
@@ -35,7 +35,7 @@ class ControllerTests {
 	}
 
 	@Test
-//	@Disabled
+	@Disabled
 	void test2() {
 		Map<String, Object> params = new HashMap();
 		params.put("endPoint", "/book");

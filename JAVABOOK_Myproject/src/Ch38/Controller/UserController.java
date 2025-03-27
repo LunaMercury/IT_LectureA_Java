@@ -1,8 +1,8 @@
 // /user 엔드포인트로 들어오는 사용자 관련 요청을 처리. 회원 가입, 정보 수정, 로그인, 로그아웃 등의 사용자 관련 기능을 수행
+// 간단한 제약 조건 등은 여기서 설정. 세부적인 것은 UserServiceImpl 에서 실행
 
 package Ch38.Controller;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,7 +45,7 @@ public class UserController implements SubController {
 				String username = ((String) params.get("username") != null) ? (String) params.get("username") : null;
 				String password = ((String) params.get("password") != null) ? (String) params.get("password") : null;
 				String role = "ROLE_USER"; // 기본값
-				UserDTO userDto = new UserDTO(userid, username, password, role);
+				UserDTO userDto = new UserDTO(userid, username, password, role); // 유효성 검증 및 기타 실행을 위한 저장.
 
 				// 02 유효성 검증(Validation)
 				boolean isOk = isValid(userDto);
@@ -122,6 +122,7 @@ public class UserController implements SubController {
 	}
 
 	// 유효성 검사 함수
+	// UserServiceImpl에서 해야하지만, 간단하므로 여기서 해도 괜찮다.
 	private boolean isValid(UserDTO userDto) {
 		if (userDto.getUserid() == null || userDto.getUserid().length() <= 4) {
 			response.put("error", "userid의 길이는 최소 5자 이상이어야 합니다.");
