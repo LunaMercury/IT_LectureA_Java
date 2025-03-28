@@ -3,35 +3,24 @@
 package Ch38.Domain.DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
 import Ch36.Domain.Dto.UserDto;
+import Ch38.Domain.DAO.ConnectionPool.ConnectionPool;
 import Ch38.Domain.DTO.UserDTO;
 
-public class UserDAOImpl {
-	private Connection conn;
-	private PreparedStatement pstmt;
-	private ResultSet rs;
-
-	private String id = "root";
-	private String pw = "1234";
-	private String url = "jdbc:mysql://localhost:3306/bookDB";
+public class UserDAOImpl extends DAO implements UserDao {
 
 	// 싱글톤 패턴처리
 	private static UserDAOImpl instance;
 
 	private UserDAOImpl() throws ClassNotFoundException, SQLException {
 		System.out.println("[DAO] UserDaoImpl init...");
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		conn = DriverManager.getConnection(url, id, pw);
-		System.out.println("DB CONNECTED");
+		connectionPool = ConnectionPool.getInstance();
 	};
 
-	public static UserDAOImpl getInstance() throws ClassNotFoundException, SQLException {
+	public static UserDao getInstance() throws ClassNotFoundException, SQLException {
 		if (instance == null) {
 			instance = new UserDAOImpl();
 		}
@@ -39,16 +28,22 @@ public class UserDAOImpl {
 	};
 
 	// CRUD
-	public int insert(UserDTO userDto) throws SQLException {
+	@Override
+	public int insert(UserDTO userDto) throws Exception {
 		try {
+			connectionItem = connectionPool.getConnection();
+			Connection conn = connectionItem.getConn();
+
 			pstmt = conn.prepareStatement("insert into tbl_user values(?,?,?,?)"); // DB의 코드
 			pstmt.setString(1, userDto.getUserid());
 			pstmt.setString(2, userDto.getUsername());
 			pstmt.setString(3, userDto.getPassword());
 			pstmt.setString(4, "ROLE_USER");
 
+			connectionPool.releaseConnection(connectionItem);
+
 			return pstmt.executeUpdate();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			throw new SQLException("USERDAO's INSERT SQL EXCEPTION");
 		} finally {
@@ -59,9 +54,11 @@ public class UserDAOImpl {
 		}
 	}
 
+	@Override
 	public int update(UserDTO userDto) throws SQLException {
+
 		try {
-			pstmt = conn.prepareStatement(""); // DB의 코드
+//			pstmt = conn.prepareStatement(""); // DB의 코드
 
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -75,9 +72,10 @@ public class UserDAOImpl {
 		}
 	}
 
+	@Override
 	public int delete(UserDTO userDto) throws SQLException {
 		try {
-			pstmt = conn.prepareStatement(""); // DB의 코드
+//			pstmt = conn.prepareStatement(""); // DB의 코드
 
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -92,12 +90,15 @@ public class UserDAOImpl {
 	}
 
 	// 단건조회
+	@Override
 	public UserDto select(UserDTO userDto) {
 		return null;
 	}
 
 	// 다건조회
+	@Override
 	public List<UserDto> selectAll() {
 		return null;
 	}
+
 }

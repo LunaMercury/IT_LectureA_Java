@@ -13,7 +13,7 @@ class ControllerTests {
 	FrontController fc = FrontController.getInstance();
 
 	@Test	
-//	@Disabled
+	@Disabled
 	void test1() {
 		// View에서 요청정보 담기
 		Map<String, Object> params = new HashMap();
@@ -35,16 +35,16 @@ class ControllerTests {
 	}
 
 	@Test
-	@Disabled
+//	@Disabled
 	void test2() {
 		Map<String, Object> params = new HashMap();
 		params.put("endPoint", "/book");
 		params.put("serviceNo", 1);
 		// 도서등록 - 인자전달
-		params.put("BookCode", "1234567");
-		params.put("BookName", "Ttrav");
-		params.put("Publisher", "Jonny");
-		params.put("Isbn", "1111");
+		params.put("BookCode", "12345678");
+		params.put("BookName", "C언어기본");
+		params.put("Publisher", "코리아미디어");
+		params.put("Isbn", "1010-1010");
 
 		// 요청하기
 		Map<String, Object> response = fc.execute(params);
